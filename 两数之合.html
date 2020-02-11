@@ -17,6 +17,8 @@
         * @param {number} target
         * @return {number[]}
         */
+
+        // 暴力方法一
         var twoSum = function (nums, target) {
             var newArr = [];
             for (var i = 0; i < nums.length; i++) {
@@ -29,7 +31,22 @@
 
         };
 
-        twoSum([2, 7, 11, 15], 13)
+        console.log(twoSum([2, 7, 11, 15], 13))
+
+        // 方法二
+        var twoSum2 = function (nums, target) {
+            var newArr = [];
+            for (var i = 0; i < nums.length; i++) {
+                dif = target - nums[i]
+                if (newArr[dif] != undefined) {
+                    return [newArr[dif], i]
+                }
+                newArr[nums[i]] = i;
+            }
+
+        };
+
+        console.log(twoSum2([2, 7, 11, 15], 13))
 
 
     </script>
