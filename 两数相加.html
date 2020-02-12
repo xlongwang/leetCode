@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两数相加</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+    // 输出：7 -> 0 -> 8
+    // 原因：342 + 465 = 807
+
+    var addTwoNumbers = function (l1, l2) {
+        function toNum(sum) {
+            var temp = sum.split(' -> ')
+            var st = ""
+            temp.map(item => {
+                st = item + st
+            })
+            return parseInt(st);
+        }
+        let sum = toNum(l1) + toNum(l2) + "";
+        return sum.split("").reverse().join(' -> ')
+    };
+    addTwoNumbers('2 -> 4 -> 3', '5 -> 6 -> 4')
+</script>
+
+</html>
